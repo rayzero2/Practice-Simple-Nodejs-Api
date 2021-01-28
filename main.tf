@@ -2,6 +2,25 @@ provider "azurerm" {
   version = ">=1.15.0"
 }
 
+terraform {
+       backend "remote" {
+         # The name of your Terraform Cloud organization.
+         organization = "patanasak"
+
+         # The name of the Terraform Cloud workspace to store Terraform state files in.
+         workspaces {
+           name = "int493"
+         }
+       }
+     }
+
+     # An example resource that does nothing.
+     resource "null_resource" "example" {
+       triggers = {
+         value = "A example resource that does nothing!"
+       }
+     }
+
 resource "azurerm_resource_group" "INT493" {
     name = "lab1"
     location = "Southeast Asia"
