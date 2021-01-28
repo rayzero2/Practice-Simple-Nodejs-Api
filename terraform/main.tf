@@ -1,10 +1,7 @@
 terraform {
     required_version = ">=0.11"
-  backend "azurerm" {
-    storage_account_name = "__terraformstorageaccount__"
-    container_name       = "terraform"
-    key                  = "terraform.tfstate"
-    access_key           = "__storagekey__"
+   backend "remote" {
+    hostname = "b6.tnpl.me"
     organization = "patanasak"
 
     workspaces {
@@ -25,12 +22,12 @@ resource "azurerm_app_service_plan" "INT493" {
 
 
     sku {
-        tier = "FREE"
+        tier = "Standard"
         size = "F1"
     }
 
-
 }
+
 resource "azurerm_app_service" "INT493" {
     name = "__appservicename__"
     location = "${azurerm_resource_group.INT493.location}"
