@@ -9,7 +9,7 @@ resource "azurerm_resource_group" "INT493" {
 
 resource "azurerm_virtual_network" "INT493" {
     name = "INT493-vnet"
-    resource_group_name = "${azurerm_resource_group.int493.name}"
+    resource_group_name = "INT493"
     location = "Southeast Asia"
     address_space = [ "10.0.0.0/24" ]
 }
