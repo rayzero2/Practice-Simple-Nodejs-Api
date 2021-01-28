@@ -50,6 +50,9 @@
           pull_request:
       jobs:
           terraform:
+            defaults:
+              run:
+                working-directory: $DIR_OF_CHOICE
             name: 'Terraform'
             runs-on: ubuntu-20.04
       # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
