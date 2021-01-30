@@ -15,7 +15,7 @@ terraform {
      }
 
 resource "azurerm_resource_group" "INT493" {
-    name = "lab1"
+    name = "INT493"
     location = "Southeast Asia"
 }
 
